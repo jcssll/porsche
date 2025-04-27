@@ -1,10 +1,69 @@
 ﻿@page
 @model IndexModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Porsche Dealership</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <!-- Hero Section -->
+    <section class="relative bg-black text-white h-96 flex items-center justify-center bg-cover bg-center" style="background-image: url('/images/2018-pcna-images-header.jpg');">
+        <div class="bg-black bg-opacity-50 p-10 rounded">
+            <h1 class="text-5xl font-bold uppercase">Porsche Dealership</h1>
+            <p class="text-xl mt-2">Find Your Dream Porsche</p>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="p-8 max-w-7xl mx-auto">
+        <form method="get" class="bg-white p-6 rounded shadow-md mb-8">
+            @* <div class="flex flex-wrap gap-4"> *@
+            @*     @foreach (var option in Model.AvailableOptions) *@
+            @*     { *@
+            @*         <label class="flex items-center space-x-2"> *@
+            @*             <input type="checkbox" name="SelectedOptions" value="@option.Name"  *@
+            @*                    @(Model.SelectedOptions.Contains(option.Name) ? "checked" : "") /> *@
+            @*             <span>@option.Name</span> *@
+            @*         </label> *@
+            @*     } *@
+            @* </div> *@
+            <div class="mt-4">
+                <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" type="submit">
+                    Search
+                </button>
+            </div>
+        </form>
+
+        <!-- Inventory Cards -->
+        @* <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"> *@
+        @*     @foreach (var car in Model.Cars) *@
+        @*     { *@
+        @*         <div class="relative bg-white rounded-lg overflow-hidden shadow-lg"> *@
+        @*             <div class="h-48 bg-cover bg-center" style="background-image: url('@car.ImagePath');"></div> *@
+        @*             <div class="p-4"> *@
+        @*                 <h2 class="text-2xl font-bold">@car.Model</h2> *@
+        @*                 <p class="text-gray-600">@car.Year • @car.Color</p> *@
+        @*                 <p class="text-gray-800 font-bold mt-2">$@String.Format("{0:N0}", car.Price)</p> *@
+        @*                 <p class="text-gray-500 text-sm">@car.Mileage miles</p> *@
+        @*             </div> *@
+        @*         </div> *@
+        @*     } *@
+        @* </div> *@
+
+    </section>
+
+</body>
+</html>
+
