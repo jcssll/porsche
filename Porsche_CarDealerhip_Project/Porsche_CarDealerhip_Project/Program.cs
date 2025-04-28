@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using Porsche_CarDealerhip_Project.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+//  
+builder.Services.AddDbContext<PorscheDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
