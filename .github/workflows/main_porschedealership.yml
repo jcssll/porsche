@@ -19,10 +19,10 @@ jobs:
       with:
         dotnet-version: '8.0.x'
 
-    -name: Restore Dependencies
+    - name: Restore Dependencies
   run: dotnet restore ./Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project.csproj
 
-     -name:Build Project
+    - name:Build Project
   run: dotnet build ./Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project.csproj --configuration Release
 
 - name: Publish Project
