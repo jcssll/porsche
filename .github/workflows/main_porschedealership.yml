@@ -1,58 +1,36 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
-name: Build and deploy ASP.Net Core app to Azure Web App - PorscheDealership
+name: Build and Deploy ASP.NET Core App to Azure Web App - PorscheDealership
 
 on:
   push:
     branches:
-      - main
-  workflow_dispatch:
+      - main  # or 'master' if that's your branch name
+  workflow_dispatch: # allow manual trigger
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: windows-latest
-    permissions:
-      contents: read #This is required for actions/checkout
 
     steps:
-      - uses: actions/checkout@v4
+    - name: Checkout Code
+      uses: actions/checkout@v4
 
-      - name: Set up .NET Core
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '9.x'
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.0.x' #  LOCK to .NET 8 LTS
 
-      - name: Build with dotnet
-        run: dotnet build --configuration Release
+    - name: Restore Dependencies
+      run: dotnet restore
 
-      - name: dotnet publish
-        run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"
+    - name: Build Project
+      run: dotnet build --configuration Release
 
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v4
-        with:
-          name: .net-app
-          path: ${{env.DOTNET_ROOT}}/myapp
+    - name: Publish Project
+      run: dotnet publish -c Release -o publish_output
 
-  deploy:
-    runs-on: windows-latest
-    needs: build
-    environment:
-      name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-    
-    steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v4
-        with:
-          name: .net-app
-      
-      - name: Deploy to Azure Web App
-        id: deploy-to-webapp
-        uses: azure/webapps-deploy@v3
-        with:
-          app-name: 'PorscheDealership'
-          slot-name: 'Production'
-          package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B2CACB64D9E24D4AA0613E22E362AEDA }}
+    - name: Deploy to Azure Web App
+      uses: azure/webapps-deploy@v3
+      with:
+        app-name: 'PorscheDealership' #  your Azure Web App Name
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_PORSCHEDEALERSHIP }}
+        package: publish_output
