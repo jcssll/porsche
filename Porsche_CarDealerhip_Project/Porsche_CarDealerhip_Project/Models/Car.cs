@@ -11,6 +11,6 @@
         public decimal Price { get; set; }
         public string? ImagePath { get; set; }
 
-        //public ICollection<CarOption> CarOptions { get; set; } = new List<CarOption>();
+        public ICollection<CarOption> CarOptions { get; set; } = new List<CarOption>();
     }
 }
