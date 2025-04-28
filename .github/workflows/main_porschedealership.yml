@@ -3,8 +3,8 @@ name: Build and Deploy ASP.NET Core App to Azure Web App - PorscheDealership
 on:
   push:
     branches:
-      - main  # or 'master' if that's your branch name
-  workflow_dispatch: # allow manual trigger
+      - main
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -17,20 +17,20 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '8.0.x' #  LOCK to .NET 8 LTS
+        dotnet-version: '8.0.x'
 
     - name: Restore Dependencies
-      run: dotnet restore
+      run: dotnet restore ./PorscheDealership/PorscheDealership.csproj
 
     - name: Build Project
-      run: dotnet build --configuration Release
+      run: dotnet build ./PorscheDealership/PorscheDealership.csproj --configuration Release
 
     - name: Publish Project
-      run: dotnet publish -c Release -o publish_output
+      run: dotnet publish ./PorscheDealership/PorscheDealership.csproj -c Release -o publish_output
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v3
       with:
-        app-name: 'PorscheDealership' #  your Azure Web App Name
+        app-name: 'PorscheDealership'
         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_PORSCHEDEALERSHIP }}
         package: publish_output
