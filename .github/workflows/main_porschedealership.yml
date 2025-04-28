@@ -11,27 +11,26 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: '8.0.x'
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
 
-    - name: Restore Dependencies
-  run: dotnet restore ./Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project.csproj
+      - name: Restore Dependencies
+        run: dotnet restore ./Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project.csproj
 
-    - name:Build Project
-  run: dotnet build ./Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project.csproj --configuration Release
+      - name: Build Project
+        run: dotnet build ./Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project.csproj --configuration Release
 
-- name: Publish Project
-  run: dotnet publish ./Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project.csproj -c Release -o publish_output
+      - name: Publish Project
+        run: dotnet publish ./Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project.csproj -c Release -o publish_output
 
-
-    - name: Deploy to Azure Web App
-      uses: azure/webapps-deploy@v3
-      with:
-        app-name: 'PorscheDealership'
-        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_PORSCHEDEALERSHIP }}
-        package: publish_output
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: 'PorscheDealership'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_PORSCHEDEALERSHIP }}
+          package: publish_output
