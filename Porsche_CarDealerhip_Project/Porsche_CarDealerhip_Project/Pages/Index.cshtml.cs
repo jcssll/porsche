@@ -21,6 +21,8 @@ public class IndexModel : PageModel
     }
 
     [BindProperty(SupportsGet = true)]
+
+    public string? SearchTerm { get; set; }
     public List<string> SelectedOptions { get; set; } = new List<string>();
 
     public List<Car> Cars { get; set; } = new List<Car>();
@@ -35,6 +37,12 @@ public class IndexModel : PageModel
             .Include(c => c.CarOptions)
             .ThenInclude(co => co.Option)
             .AsQueryable();
+
+        if (!string.IsNullOrWhiteSpace(SearchTerm))
+        {
+            query = query.Where(c => c.Model.Contains(SearchTerm));
+        }
+
         if (SelectedOptions != null && SelectedOptions.Any())
         {
             query = query.Where(c => c.CarOptions
