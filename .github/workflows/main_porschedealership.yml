@@ -20,13 +20,14 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore Dependencies
-        run: dotnet restore /Porsche_CarDealership_Project/Porsche_CarDealership_Project.csproj
+        run: dotnet restore Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project.csproj
 
       - name: Build Project
-        run: dotnet build /Porsche_CarDealership_Project/Porsche_CarDealership_Project.csproj --configuration Release
+        run: dotnet restore Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project.csproj --configuration Release
+        
 
       - name: Publish Project
-        run: dotnet publish /Porsche_CarDealerhip_Project/Porsche_CarDealership_Project.csproj -c Release -o publish_output
+        run: dotnet restore Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project.csproj -c Release -o publish_output
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
