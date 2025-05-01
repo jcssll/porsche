@@ -26,26 +26,21 @@
     </section>
 
     <!-- Search Section -->
-    <section class="p-8 max-w-7xl mx-auto">
-        <form method="get" class="bg-white p-6 rounded shadow-md mb-8">
-            <input type="text" name="SearchTerm" value="@Model.SearchTerm" placeholder="Search by model..." class="border rounded p-2 mb-4 w-full" />
+<form method="get">
+    <input type="text" name="SearchTerm" value="@Model.SearchTerm" placeholder="Search by model..." />
 
-            <div class="flex flex-wrap gap-4 mt-4">
-                @foreach (var option in Model.AvailableOptions)
-                {
-                    <label class="flex items-center space-x-2">
-                        <input type="checkbox" name="SelectedOptions" value="@option.Name" @(Model.SelectedOptions.Contains(option.Name) ? "checked" : "") />
-                        <span>@option.Name</span>
-                    </label>
-                }
-            </div>
+    <label><input type="checkbox" name="SelectedOptions" value="Sun Roof" @(Model.SelectedOptions.Contains("Sun Roof") ? "checked" : "") /> Sun Roof</label>
+    <label><input type="checkbox" name="SelectedOptions" value="4 Wheel Drive" @(Model.SelectedOptions.Contains("4 Wheel Drive") ? "checked" : "") /> 4 Wheel Drive</label>
+    <label><input type="checkbox" name="SelectedOptions" value="Low Miles" @(Model.SelectedOptions.Contains("Low Miles") ? "checked" : "") /> Low Miles</label>
+    <label><input type="checkbox" name="SelectedOptions" value="Power Windows" @(Model.SelectedOptions.Contains("Power Windows") ? "checked" : "") /> Power Windows</label>
+    <label><input type="checkbox" name="SelectedOptions" value="Navigation" @(Model.SelectedOptions.Contains("Navigation") ? "checked" : "") /> Navigation</label>
+    <label><input type="checkbox" name="SelectedOptions" value="Heated Seats" @(Model.SelectedOptions.Contains("Heated Seats") ? "checked" : "") /> Heated Seats</label>
 
-            <div class="mt-4">
-                <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" type="submit">
-                    Search
-                </button>
-            </div>
-        </form>
+    <button type="submit"
+        style="background-color: blue; color: white; border: none; padding: 0.40rem 1.5rem; border-radius: 6px; font-size: 1rem; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: background-color 0.3s;">
+    🔍 Search
+</button>
+</form>
 
         <!-- Inventory Cards -->
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"> 
