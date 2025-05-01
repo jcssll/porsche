@@ -46,9 +46,11 @@ wwwroot/lib/
 *.props
 *.targets
 
-# Azure publish artifacts
-.publishsettings
-publish.zip
+# Ignore Service Dependencies and Azure publish settings
+**/Properties/ServiceDependencies/
+*.pubxml
+*.publishsettings
+*.json
 
 # Auto-generated EF files
 Migrations/
@@ -69,3 +71,11 @@ wwwroot/lib/
 
 # Publish profiles
 **/Properties/PublishProfiles/*.pubxml
+
+# Ignore all files generated from libman or bundling (unless you created them) - Redundant
+wwwroot/lib/
+**/*.min.js
+**/*.min.css
+**/*.map
+**/*.js
+**/*.css
