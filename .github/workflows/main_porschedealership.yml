@@ -1,4 +1,4 @@
-name: Build and Deploy ASP.NET Core App to Azure - PorscheDealership
+name: Build and Deploy ASP.NET Core App - PorscheDealership
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Setup .NET
+    - name: Setup .NET SDK
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '8.0.x'
@@ -35,5 +35,5 @@ jobs:
       uses: azure/webapps-deploy@v3
       with:
         app-name: PorscheDealership
-        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_PORSCHEDEALERSHIP }}
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
         package: publish.zip
