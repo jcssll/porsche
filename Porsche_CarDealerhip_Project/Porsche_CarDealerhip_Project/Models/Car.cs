@@ -11,6 +11,13 @@
         public decimal Price { get; set; }
         public string? ImagePath { get; set; }
 
+        public bool HasSunRoof { get; set; }
+        public bool Has4WheelDrive { get; set; }
+        public bool HasLowMiles { get; set; }
+        public bool HasPowerWindows { get; set; }
+        public bool HasNavigation { get; set; }
+        public bool HasHeatedSeats { get; set; }
+
         public ICollection<CarOption> CarOptions { get; set; } = new List<CarOption>();
     }
 }
