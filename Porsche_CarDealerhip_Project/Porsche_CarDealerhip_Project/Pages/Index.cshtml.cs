@@ -1,17 +1,12 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 using Porsche_CarDealerhip_Project.Data;
 using Porsche_CarDealerhip_Project.Models;
-
-namespace Porsche_CarDealerhip_Project.Pages;
+using Microsoft.EntityFrameworkCore;
 
 public class IndexModel : PageModel
 {
     private readonly PorscheDbContext _context;
-
-
-
     private readonly ILogger<IndexModel> _logger;
 
     public IndexModel(PorscheDbContext context, ILogger<IndexModel> logger)
@@ -21,35 +16,39 @@ public class IndexModel : PageModel
     }
 
     [BindProperty(SupportsGet = true)]
-
     public string? SearchTerm { get; set; }
-    public List<string> SelectedOptions { get; set; } = new List<string>();
 
-    public List<Car> Cars { get; set; } = new List<Car>();
+    [BindProperty(SupportsGet = true)]
+    public List<string> SelectedOptions { get; set; } = new();
 
-    public List<Option> AvailableOptions { get; set; } = new List<Option>();
+    public List<Car> Cars { get; set; } = new();
 
     public async Task OnGetAsync()
     {
-        AvailableOptions = await _context.Options.ToListAsync();
-
-        var query = _context.Cars
-            .Include(c => c.CarOptions)
-            .ThenInclude(co => co.Option)
-            .AsQueryable();
+        var query = _context.Cars.AsQueryable();
 
         if (!string.IsNullOrWhiteSpace(SearchTerm))
         {
             query = query.Where(c => c.Model.Contains(SearchTerm));
         }
 
-        if (SelectedOptions != null && SelectedOptions.Any())
+        if (SelectedOptions.Any())
         {
-            query = query.Where(c => c.CarOptions
-                .Any(co => SelectedOptions.Contains(co.Option.Name)));
+            foreach (var option in SelectedOptions)
+            {
+                query = option switch
+                {
+                    "Sun Roof" => query.Where(c => c.HasSunRoof),
+                    "4 Wheel Drive" => query.Where(c => c.Has4WheelDrive),
+                    "Low Miles" => query.Where(c => c.HasLowMiles),
+                    "Power Windows" => query.Where(c => c.HasPowerWindows),
+                    "Navigation" => query.Where(c => c.HasNavigation),
+                    "Heated Seats" => query.Where(c => c.HasHeatedSeats),
+                    _ => query
+                };
+            }
         }
 
         Cars = await query.ToListAsync();
-
     }
 }
