@@ -1,69 +1,62 @@
-*.v2
-*.vsidx
-Porsche_CarDealerhip_Project/.vs/Porsche_CarDealerhip_Project/v17/.suo
-Porsche_CarDealerhip_Project/.vs/Porsche_CarDealerhip_Project/v17/DocumentLayout.json
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project.sln
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/appsettings.Development.json
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/jquery/dist/jquery.min.map
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/jquery/dist/jquery.min.js
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/jquery-validation/dist/additional-methods.min.js
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/obj/Debug/net8.0/Porsche_CarDealerhip_Project.assets.cache
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/obj/Debug/net8.0/Porsche_CarDealerhip_Project.RazorAssemblyInfo.cache
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/obj/Debug/net8.0/staticwebassets.removed.txt
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/obj/Debug/net8.0/Porsche_CarDealerhip_Project.AssemblyInfo.cs
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/obj/Debug/net8.0/Porsche_CarDealerhip_Project.AssemblyInfoInputs.cache
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/obj/Debug/net8.0/Porsche_CarDealerhip_Project.RazorAssemblyInfo.cs
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/obj/Porsche_CarDealerhip_Project.csproj.nuget.g.props
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/obj/Porsche_CarDealerhip_Project.csproj.nuget.g.targets
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map
+# Build results
+bin/
+obj/
+publish_output/
 *.dll
-*.props
-*.targets
-*.cache
-*.bin
-Porsche_CarDealerhip_Project/.vs/Porsche_CarDealerhip_Project/config/applicationhost.config
-Porsche_CarDealerhip_Project/.vs/Porsche_CarDealerhip_Project/v17/DocumentLayout.backup.json
 *.exe
 *.pdb
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/bin/Debug/net8.0/Porsche_CarDealerhip_Project.staticwebassets.runtime.json
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/obj/Debug/net8.0/ApiEndpoints.json
+*.cache
+*.log
+*.zip
+
+# User-specific files
+*.user
+*.suo
+*.vs/
+.vscode/
 *.Up2Date
 *.BuildWithSkipAnalyzers
+
+# OS junk
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ASP.NET Core generated files
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs and temporary files
 *.txt
-Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project.csproj
-*.cache
+
+# VS settings
+.vs/
+.vscode/
+*.vsidx
+*.v2
+
+# Libman (library manager)
+wwwroot/lib/
+
+# NuGet and MSBuild artifacts
+*.nuget.g.props
+*.nuget.g.targets
+*.props
+*.targets
+
+# Azure publish artifacts
+.publishsettings
+publish.zip
+
+# Auto-generated EF files
+Migrations/
+
+# Ignore secrets or development-only configs (optional, if not using them)
+appsettings.Development.json
+secrets.json
+
+# Rider/JetBrains
+.idea/
+*.sln.iml
