@@ -60,3 +60,12 @@ secrets.json
 # Rider/JetBrains
 .idea/
 *.sln.iml
+
+# Minified and map files (if using LibMan or npm)
+wwwroot/lib/
+**/*.min.js
+**/*.min.css
+**/*.map
+
+# Publish profiles
+**/Properties/PublishProfiles/*.pubxml
