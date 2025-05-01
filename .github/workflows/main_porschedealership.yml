@@ -33,4 +33,4 @@ jobs:
         with:
           app-name: 'PorscheDealership'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_PORSCHEDEALERSHIP }}
-          package: publish_output
+          package: Porsche_CarDealerhip_Project/Porsche_CarDealerhip_Project/publish_output
