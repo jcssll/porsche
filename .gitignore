@@ -79,3 +79,8 @@ wwwroot/lib/
 **/*.map
 **/*.js
 **/*.css
+
+#solution files
+*.sln
+#user removal
+*.user
