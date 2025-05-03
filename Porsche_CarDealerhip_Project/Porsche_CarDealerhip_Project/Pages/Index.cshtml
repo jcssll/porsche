@@ -18,27 +18,46 @@
 </head>
 <body class="bg-gray-100">
     <!-- Hero Section -->
-    <section class="relative bg-black text-white h-96 flex items-center justify-center bg-cover bg-center" style="background-image: url('/images/test.jpg');">
-        <div class="bg-black bg-opacity-50 p-10 rounded">
-            <h1 class="text-5xl font-bold uppercase">Porsche Dealership</h1>
-            <p class="text-xl mt-2">London Edition</p>
-        </div>
-    </section>
+  @* <section class="relative bg-black text-white h-96 flex items-center justify-center bg-cover bg-center" style="background-image: url('/images/test.jpg');"> *@
+  @*       <div class="bg-black bg-opacity-50 p-10 rounded"> *@
+  @*           <h1 class="text-5xl font-bold uppercase">Porsche Dealership</h1> *@
+  @*           <p class="text-xl mt-2">London Edition</p> *@
+  @*       </div> *@
+  @*   </section>   *@
+
+<header class="bg-white shadow-md p-6 flex flex-col items-center justify-center text-center">
+    <img src="/images/porsche-logo.png" alt="Porsche Logo" class="h-16 mb-2">
+    @* <h1 class="text-3xl font-semibold text-gray-800">Porsche Dealership</h1> *@
+</header>
+
+  <section class="relative h-screen overflow-hidden">
+    <video autoplay muted loop class="absolute w-full h-full object-cover">
+        <source src="/videos/porsche.mp4" type="video/mp4">
+    </video>
+    <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-white text-center p-6">
+        @* <h1 class="text-5xl font-bold">Welcome to Porsche London</h1> *@
+        @* <p class="text-xl mt-2">Drive the Future</p> *@
+    </div>
+</section>
 
     <!-- Search Section -->
-<form method="get">
-    <input type="text" name="SearchTerm" value="@Model.SearchTerm" placeholder="Search by model..." />
+<form method="get" class="p-6 bg-white rounded-lg shadow-lg max-w-4xl mx-auto mt-6 space-y-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <input type="text" name="SearchTerm" value="@Model.SearchTerm"
+               class="p-3 border rounded-md" placeholder="Search by model..." />
 
-    <label><input type="checkbox" name="SelectedOptions" value="Sun Roof" @(Model.SelectedOptions.Contains("Sun Roof") ? "checked" : "") /> Sun Roof</label>
-    <label><input type="checkbox" name="SelectedOptions" value="4 Wheel Drive" @(Model.SelectedOptions.Contains("4 Wheel Drive") ? "checked" : "") /> 4 Wheel Drive</label>
-    <label><input type="checkbox" name="SelectedOptions" value="Low Miles" @(Model.SelectedOptions.Contains("Low Miles") ? "checked" : "") /> Low Miles</label>
-    <label><input type="checkbox" name="SelectedOptions" value="Power Windows" @(Model.SelectedOptions.Contains("Power Windows") ? "checked" : "") /> Power Windows</label>
-    <label><input type="checkbox" name="SelectedOptions" value="Navigation" @(Model.SelectedOptions.Contains("Navigation") ? "checked" : "") /> Navigation</label>
-    <label><input type="checkbox" name="SelectedOptions" value="Heated Seats" @(Model.SelectedOptions.Contains("Heated Seats") ? "checked" : "") /> Heated Seats</label>
-    <button type="submit"
-        style="background-color: blue; color: white; border: none; padding: 0.40rem 1.5rem; border-radius: 6px; font-size: 1rem; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: background-color 0.3s;">
-Search
-</button>
+        @foreach (var option in new[] { "Sun Roof", "4 Wheel Drive", "Low Miles", "Power Windows", "Navigation", "Heated Seats" })
+        {
+            <label class="flex items-center space-x-2">
+                <input type="checkbox" name="SelectedOptions" value="@option"
+                       @(Model.SelectedOptions.Contains(option) ? "checked" : "") />
+                <span>@option</span>
+            </label>
+        }
+    </div>
+    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded shadow">
+        Search
+    </button>
 </form>
 
         <!-- Inventory Cards -->
